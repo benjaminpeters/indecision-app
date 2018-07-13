@@ -2,19 +2,23 @@
 
 console.log("App.js is running");
 
-// JSX - JavaScript XML
-var template = React.createElement(
+var app = {
+    title: "Indecision App",
+    subTitle: "Put your life in the hands of a computer"
+
+    // JSX - JavaScript XML
+};var template = React.createElement(
     "div",
     null,
     React.createElement(
         "h1",
         null,
-        "Indecision App"
+        app.title
     ),
     React.createElement(
         "p",
         null,
-        "This is some info"
+        app.subTitle
     ),
     React.createElement(
         "ol",
@@ -32,26 +36,38 @@ var template = React.createElement(
     )
 );
 
+var user = {
+    name: "Benny",
+    age: 28,
+    location: "TO"
+};
+
+var userName = 'Ben';
+var userAge = 28;
+var userLocation = "TO";
+
 var template2 = React.createElement(
     "div",
     null,
     React.createElement(
         "h1",
         null,
-        "Benjamin"
+        user.name
     ),
     React.createElement(
         "p",
         null,
-        "Age: 28"
+        "Age: ",
+        user.age
     ),
     React.createElement(
         "p",
         null,
-        "Location: TO"
+        "Location: ",
+        user.location
     )
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template2, appRoot);
+ReactDOM.render(template, appRoot);
