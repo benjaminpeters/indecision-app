@@ -27,6 +27,8 @@ var onRemoveAll = function onRemoveAll() {
 
 var appRoot = document.getElementById('app');
 
+var numbers = [55, 101, 1000];
+
 var renderApp = function renderApp() {
     var template = React.createElement(
         "div",
@@ -56,19 +58,26 @@ var renderApp = function renderApp() {
             { onClick: onRemoveAll },
             "Remove All"
         ),
+        numbers.map(function (number) {
+            return React.createElement(
+                "p",
+                { key: number },
+                "Number: ",
+                number
+            );
+        }),
         React.createElement(
             "ol",
             null,
-            React.createElement(
-                "li",
-                null,
-                "Item one"
-            ),
-            React.createElement(
-                "li",
-                null,
-                "Item two"
-            )
+            app.options.map(function (item) {
+                return React.createElement(
+                    "li",
+                    { key: item },
+                    "Item: ",
+                    item,
+                    " "
+                );
+            })
         ),
         React.createElement(
             "form",
