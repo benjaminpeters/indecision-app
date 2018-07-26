@@ -1,14 +1,12 @@
 // import './utils.js';
-// import { square, add } from './utils.js';
+// import subtract, { square, add } from './utils.js';
 
 // console.log('app.js is running');
 // console.log(square(4));
 // console.log(add(100, 23));
+// console.log(subtract(100, 81));
 
-import { canDrink, isAdult } from './person.js';
-
+import isSenior, { canDrink, isAdult } from './person.js';
 console.log(canDrink(5));
-console.log(canDrink(25));
-
-console.log(isAdult(18));
 console.log(isAdult(1));
+console.log(isSenior(65));
